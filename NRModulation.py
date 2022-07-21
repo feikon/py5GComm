@@ -1,12 +1,17 @@
-from cmath import sqrt
+from cmath import sqrt, pi, exp
 
 
-def BPSK(bt):
-    dt = 1/sqrt(2)*((1-2*bt)+(1j-2j*bt))
-    return dt
+def piDiv2BPSK(b_i):
+	d_i = exp(1j * pi / 2 * (b_i % 2)) / sqrt(2) * \
+            ((1 - 2 * b_i) + (1j - 2j * b_i))
+	return d_i
 
 
-d0 = BPSK(0)
-d1 = BPSK(1)
-print(d0, '\n', d1)
-print(-1/sqrt(2)-1j/sqrt(2))
+def BPSK(b_i):
+	d_i = 1 / sqrt(2) * ((1 - 2 * b_i) + (1j - 2j * b_i))
+	return d_i
+
+
+d_0 = piDiv2BPSK(0)
+d_1 = piDiv2BPSK(1)
+print(d_0, '\n', d_1)
