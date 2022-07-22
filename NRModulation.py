@@ -29,8 +29,9 @@ def QAM256(b_8i0, b_8i1, b_8i2, b_8i3, b_8i4, b_8i5, b_8i6, b_8i7):
     pass
 
 
-d_00 = QPSK(0, 0)
-d_01 = QPSK(0, 1)
-d_10 = QPSK(1, 0)
-d_11 = QPSK(1, 1)
-print(d_00, '\n', d_01, '\n', d_10, '\n', d_11)
+if __name__ == '__main__':
+	d_00 = QPSK(0, 0)
+	d_01 = QPSK(0, 1)
+	d_10 = QPSK(1, 0)
+	d_11 = QPSK(1, 1)
+	print(d_00, '\n', d_01, '\n', d_10, '\n', d_11)
